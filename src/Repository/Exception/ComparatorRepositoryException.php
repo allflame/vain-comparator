@@ -8,28 +8,28 @@
 
 namespace Vain\Comparator\Repository\Exception;
 
-use Vain\Comparator\Repository\RepositoryInterface;
+use Vain\Comparator\Repository\ComparatorRepositoryInterface;
 use Vain\Core\Exception\CoreException;
 
-class RepositoryException extends CoreException
+class ComparatorRepositoryException extends CoreException
 {
     private $repository;
 
     /**
      * VainComparatorRepositoryException constructor.
-     * @param RepositoryInterface $comparatorRepository
+     * @param ComparatorRepositoryInterface $comparatorRepository
      * @param string $message
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(RepositoryInterface $comparatorRepository, $message, $code, \Exception $previous)
+    public function __construct(ComparatorRepositoryInterface $comparatorRepository, $message, $code, \Exception $previous)
     {
         $this->repository = $comparatorRepository;
         parent::__construct($message, $code, $previous);
     }
 
     /**
-     * @return RepositoryInterface
+     * @return ComparatorRepositoryInterface
      */
     public function getRepository()
     {

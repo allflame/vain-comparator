@@ -9,16 +9,16 @@
 namespace Vain\Comparator\Factory\Exception;
 
 
-use Vain\Comparator\Factory\FactoryInterface;
+use Vain\Comparator\Factory\ComparatorFactoryInterface;
 
-class UnknownTypeFactoryException extends FactoryException
+class UnknownTypeComparatorFactoryException extends ComparatorFactoryException
 {
     /**
      * VainComparatorFactoryUnknownTypeException constructor.
-     * @param FactoryInterface $factory
+     * @param ComparatorFactoryInterface $factory
      * @param string $type
      */
-    public function __construct(FactoryInterface $factory, $type)
+    public function __construct(ComparatorFactoryInterface $factory, $type)
     {
         parent::__construct($factory, sprintf('Cannot create comparator by unknown type %s', $type), 0, null);
     }
