@@ -9,9 +9,9 @@
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\ComparatorInterface;
-use Vain\Core\Exception\VainCoreException;
+use Vain\Core\Exception\CoreException;
 
-class ComparatorException extends VainCoreException
+class ComparatorException extends CoreException
 {
     private $comparator;
 

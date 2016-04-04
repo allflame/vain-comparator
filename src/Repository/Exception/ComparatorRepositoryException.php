@@ -9,9 +9,9 @@
 namespace Vain\Comparator\Repository\Exception;
 
 use Vain\Comparator\Repository\ComparatorRepositoryInterface;
-use Vain\Core\Exception\VainCoreException;
+use Vain\Core\Exception\CoreException;
 
-class ComparatorRepositoryException extends VainCoreException
+class ComparatorRepositoryException extends CoreException
 {
     private $repository;
 

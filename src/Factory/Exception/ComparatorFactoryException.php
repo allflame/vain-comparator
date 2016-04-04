@@ -8,11 +8,10 @@
 
 namespace Vain\Comparator\Factory\Exception;
 
-
 use Vain\Comparator\Factory\ComparatorFactoryInterface;
-use Vain\Core\Exception\VainCoreException;
+use Vain\Core\Exception\CoreException;
 
-class ComparatorFactoryException extends VainCoreException
+class ComparatorFactoryException extends CoreException
 {
     private $factory;
 
