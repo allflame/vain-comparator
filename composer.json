@@ -1,0 +1,30 @@
+{
+    "name": "vain/comparator",
+    "type": "shared-package",
+    "authors": [
+        {
+            "name": "Taras Girnyk",
+            "email": "le@mirohost.net",
+            "homepage": "https://github.com/allflame/vain-comparator",
+            "role": "Maintainer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vain\\Comparator\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "ext-pdo": "*",
+        "vain/core": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/allflame/vain-core"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
