@@ -9,13 +9,17 @@
 namespace Vain\Comparator\Decorator;
 
 
-use Vain\Comparator\VainComparatorInterface;
+use Vain\Comparator\ComparatorInterface;
 
-class AbstractVainComparatorDecorator implements VainComparatorInterface
+class AbstractComparatorDecorator implements ComparatorInterface
 {
     private $comparator;
 
-    public function __construct(VainComparatorInterface $comparator)
+    /**
+     * AbstractComparatorDecorator constructor.
+     * @param ComparatorInterface $comparator
+     */
+    public function __construct(ComparatorInterface $comparator)
     {
         $this->comparator = $comparator;
     }
@@ -25,7 +29,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function eq($what, $against)
     {
-        // TODO: Implement eq() method.
+        return $this->comparator->eq($what, $against);
     }
 
     /**
@@ -33,7 +37,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function neq($what, $against)
     {
-        // TODO: Implement neq() method.
+        return $this->comparator->neq($what, $against);
     }
 
     /**
@@ -41,7 +45,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function lt($what, $against)
     {
-        // TODO: Implement lt() method.
+        return $this->comparator->lt($what, $against);
     }
 
     /**
@@ -49,7 +53,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function lte($what, $against)
     {
-        // TODO: Implement lte() method.
+        return $this->comparator->lte($what, $against);
     }
 
     /**
@@ -57,7 +61,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function gt($what, $against)
     {
-        // TODO: Implement gt() method.
+        return $this->comparator->gt($what, $against);
     }
 
     /**
@@ -65,7 +69,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function gte($what, $against)
     {
-        // TODO: Implement gte() method.
+        return $this->comparator->gte($what, $against);
     }
 
     /**
@@ -73,7 +77,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function in($what, $against)
     {
-        // TODO: Implement in() method.
+        return $this->comparator->in($what, $against);
     }
 
     /**
@@ -81,7 +85,7 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
      */
     public function like($what, $against)
     {
-        // TODO: Implement like() method.
+        return $this->comparator->like($what, $against);
     }
 
     /**
@@ -91,6 +95,4 @@ class AbstractVainComparatorDecorator implements VainComparatorInterface
     {
         return $this->comparator->compare($shortcut, $what, $against);
     }
-
-
 }

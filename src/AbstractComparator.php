@@ -9,9 +9,9 @@
 namespace Vain\Comparator;
 
 
-use Vain\Comparator\Exception\VainComparatorUnknownShortcutException;
+use Vain\Comparator\Exception\UnknownShortcutComparatorException;
 
-abstract class AbstractVainComparator implements VainComparatorInterface
+abstract class AbstractComparator implements ComparatorInterface
 {
     /**
      * @inheritDoc
@@ -44,7 +44,7 @@ abstract class AbstractVainComparator implements VainComparatorInterface
                 return $this->like($what, $against);
                 break;
             default:
-                throw new VainComparatorUnknownShortcutException($this, $shortcut);
+                throw new UnknownShortcutComparatorException($this, $shortcut);
         }
     }
 }

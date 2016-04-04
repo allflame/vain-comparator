@@ -3,14 +3,14 @@
  * Created by PhpStorm.
  * User: allflame
  * Date: 4/4/16
- * Time: 12:10 PM
+ * Time: 12:02 PM
  */
 
-namespace Vain\Comparator\String;
+namespace Vain\Comparator\Int;
 
-use Vain\Comparator\AbstractVainComparator;
+use Vain\Comparator\AbstractComparator;
 
-class VainStringComparator extends AbstractVainComparator
+class IntComparator extends AbstractComparator
 {
     /**
      * @inheritDoc
@@ -33,7 +33,7 @@ class VainStringComparator extends AbstractVainComparator
      */
     public function lt($what, $against)
     {
-        return strcmp($what, $against) < 0;
+        return $what < $against;
     }
 
     /**
@@ -41,7 +41,7 @@ class VainStringComparator extends AbstractVainComparator
      */
     public function lte($what, $against)
     {
-        return strcmp($what, $against) <= 0;
+        return $what <= $against;
     }
 
     /**
@@ -49,7 +49,7 @@ class VainStringComparator extends AbstractVainComparator
      */
     public function gt($what, $against)
     {
-        return strcmp($what, $against) > 0;
+        return $what > $against;
     }
 
     /**
@@ -57,7 +57,7 @@ class VainStringComparator extends AbstractVainComparator
      */
     public function gte($what, $against)
     {
-        return strcmp($what, $against) >= 0;
+        return $what >= $against;
     }
 
     /**
@@ -73,6 +73,6 @@ class VainStringComparator extends AbstractVainComparator
      */
     public function like($what, $against)
     {
-        return 1 === preg_match("/$what/", $against);
+        return false;
     }
 }

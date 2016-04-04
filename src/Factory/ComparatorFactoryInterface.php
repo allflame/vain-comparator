@@ -8,14 +8,14 @@
 
 namespace Vain\Comparator\Factory;
 
-use Vain\Comparator\VainComparatorInterface;
+use Vain\Comparator\ComparatorInterface;
 
-interface VainComparatorFactoryInterface
+interface ComparatorFactoryInterface
 {
     /**
      * @param string $type
      *
-     * @return VainComparatorInterface
+     * @return ComparatorInterface
      */
     public function create($type);
 }

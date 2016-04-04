@@ -8,28 +8,28 @@
 
 namespace Vain\Comparator\Exception;
 
-use Vain\Comparator\VainComparatorInterface;
+use Vain\Comparator\ComparatorInterface;
 use Vain\Core\Exception\VainCoreException;
 
-class VainComparatorException extends VainCoreException
+class ComparatorException extends VainCoreException
 {
     private $comparator;
 
     /**
      * VainComparatorException constructor.
-     * @param VainComparatorInterface $comparator
+     * @param ComparatorInterface $comparator
      * @param string $message
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(VainComparatorInterface $comparator, $message, $code, \Exception $previous)
+    public function __construct(ComparatorInterface $comparator, $message, $code, \Exception $previous)
     {
         $this->comparator = $comparator;
         parent::__construct($message, $code, $previous);
     }
 
     /**
-     * @return VainComparatorInterface
+     * @return ComparatorInterface
      */
     public function getComparator()
     {

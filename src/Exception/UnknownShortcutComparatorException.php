@@ -8,16 +8,16 @@
 
 namespace Vain\Comparator\Exception;
 
-use Vain\Comparator\VainComparatorInterface;
+use Vain\Comparator\ComparatorInterface;
 
-class VainComparatorUnknownShortcutException extends VainComparatorException
+class UnknownShortcutComparatorException extends ComparatorException
 {
     /**
      * VainComparatorUnknownShortcutException constructor.
-     * @param VainComparatorInterface $comparator
+     * @param ComparatorInterface $comparator
      * @param string $shortcut
      */
-    public function __construct(VainComparatorInterface $comparator, $shortcut)
+    public function __construct(ComparatorInterface $comparator, $shortcut)
     {
         parent::__construct($comparator, sprintf('Cannot compare variables by unknown shortcut %s', $shortcut), 0, null);
     }

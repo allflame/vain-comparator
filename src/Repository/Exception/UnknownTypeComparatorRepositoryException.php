@@ -8,17 +8,17 @@
 
 namespace Vain\Comparator\Repository\Exception;
 
-use Vain\Comparator\Repository\VainComparatorRepositoryInterface;
+use Vain\Comparator\Repository\ComparatorRepositoryInterface;
 
-class VainComparatorRepositoryUnknownTypeException extends VainComparatorRepositoryException
+class UnknownTypeComparatorRepositoryException extends ComparatorRepositoryException
 {
     /**
      * VainComparatorRepositoryUnknownTypeException constructor.
-     * @param VainComparatorRepositoryInterface $comparatorRepository
+     * @param ComparatorRepositoryInterface $comparatorRepository
      * @param string $type
      */
     public function __construct(
-        VainComparatorRepositoryInterface $comparatorRepository,
+        ComparatorRepositoryInterface $comparatorRepository,
         $type
     ) {
         parent::__construct($comparatorRepository, sprintf('Cannot get comparator by unknown type %s', $type), 0, null);

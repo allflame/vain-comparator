@@ -9,7 +9,7 @@
 namespace Vain\Comparator;
 
 
-interface VainComparatorInterface
+interface ComparatorInterface
 {
     /**
      * @param mixed $what
