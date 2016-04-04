@@ -8,11 +8,11 @@
 
 namespace Vain\Comparator\Factory;
 
-use Vain\Comparator\Factory\Exception\UnknownTypeComparatorFactoryException;
+use Vain\Comparator\Factory\Exception\UnknownTypeFactoryException;
 use Vain\Comparator\Int\IntComparator;
 use Vain\Comparator\String\StringComparator;
 
-class ComparatorFactory implements ComparatorFactoryInterface
+class Factory implements FactoryInterface
 {
     /**
      * @inheritDoc
@@ -27,7 +27,7 @@ class ComparatorFactory implements ComparatorFactoryInterface
                 return new StringComparator();
                 break;
             default:
-                throw new UnknownTypeComparatorFactoryException($this, $type);
+                throw new UnknownTypeFactoryException($this, $type);
         }
     }
 }

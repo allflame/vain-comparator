@@ -3,19 +3,19 @@
  * Created by PhpStorm.
  * User: allflame
  * Date: 4/4/16
- * Time: 12:13 PM
+ * Time: 12:14 PM
  */
 
-namespace Vain\Comparator\Repository;
+namespace Vain\Comparator\Factory;
 
 use Vain\Comparator\ComparatorInterface;
 
-interface ComparatorRepositoryInterface
+interface FactoryInterface
 {
     /**
      * @param string $type
      *
      * @return ComparatorInterface
      */
-    public function getComparator($type);
+    public function create($type);
 }
