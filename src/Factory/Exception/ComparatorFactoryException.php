@@ -22,7 +22,7 @@ class ComparatorFactoryException extends CoreException
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(ComparatorFactoryInterface $factory, $message, $code, \Exception $previous)
+    public function __construct(ComparatorFactoryInterface $factory, $message, $code, \Exception $previous = null)
     {
         $this->factory = $factory;
         parent::__construct($message, $code, $previous);

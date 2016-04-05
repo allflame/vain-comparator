@@ -22,7 +22,7 @@ class ComparatorException extends CoreException
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(ComparatorInterface $comparator, $message, $code, \Exception $previous)
+    public function __construct(ComparatorInterface $comparator, $message, $code, \Exception $previous = null)
     {
         $this->comparator = $comparator;
         parent::__construct($message, $code, $previous);

@@ -22,7 +22,7 @@ class ComparatorRepositoryException extends CoreException
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(ComparatorRepositoryInterface $comparatorRepository, $message, $code, \Exception $previous)
+    public function __construct(ComparatorRepositoryInterface $comparatorRepository, $message, $code, \Exception $previous = null)
     {
         $this->repository = $comparatorRepository;
         parent::__construct($message, $code, $previous);
