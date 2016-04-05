@@ -11,6 +11,7 @@ namespace Vain\Comparator\Factory;
 use Vain\Comparator\Factory\Exception\UnknownTypeComparatorFactoryException;
 use Vain\Comparator\Int\IntComparator;
 use Vain\Comparator\String\StringComparator;
+use Vain\Comparator\Time\TimeComparator;
 
 class ComparatorFactory implements ComparatorFactoryInterface
 {
@@ -25,6 +26,9 @@ class ComparatorFactory implements ComparatorFactoryInterface
                 break;
             case 'string':
                 return new StringComparator();
+                break;
+            case 'time':
+                return new TimeComparator();
                 break;
             default:
                 throw new UnknownTypeComparatorFactoryException($this, $type);
