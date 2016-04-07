@@ -30,11 +30,10 @@ class ComparatorRepository implements ComparatorRepositoryInterface
      */
     public function getComparator($type)
     {
-        if (null === $this->comparators[$type]) {
+        if (false === array_key_exists($type, $this->comparators)) {
             $this->comparators[$type] = $this->comparatorFactory->create($type);
         }
 
         return $this->comparators[$type];
     }
-
 }
