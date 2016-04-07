@@ -6,11 +6,11 @@
  * Time: 12:02 PM
  */
 
-namespace Vain\Comparator\Int;
+namespace Vain\Comparator\Basic;
 
 use Vain\Comparator\AbstractComparator;
 
-class IntComparator extends AbstractComparator
+class BasicComparator extends AbstractComparator
 {
     /**
      * @inheritDoc

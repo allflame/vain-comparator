@@ -9,18 +9,20 @@
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\Factory\ComparatorFactoryInterface;
-use Vain\Comparator\Repository\Exception\UnknownTypeComparatorRepositoryException;
 
 class ComparatorRepository implements ComparatorRepositoryInterface
 {
     private $comparatorFactory;
 
-    private $comparators;
+    private $comparators = [];
 
-    public function __construct(ComparatorFactoryInterface $comparatorFactory, array $comparators = [])
+    /**
+     * ComparatorRepository constructor.
+     * @param ComparatorFactoryInterface $comparatorFactory
+     */
+    public function __construct(ComparatorFactoryInterface $comparatorFactory)
     {
         $this->comparatorFactory = $comparatorFactory;
-        $this->comparators = $comparators;
     }
 
     /**
@@ -28,10 +30,6 @@ class ComparatorRepository implements ComparatorRepositoryInterface
      */
     public function getComparator($type)
     {
-        if (false === array_key_exists($type, $this->comparators)) {
-            throw new UnknownTypeComparatorRepositoryException($this, $type);
-        }
-
         if (null === $this->comparators[$type]) {
             $this->comparators[$type] = $this->comparatorFactory->create($type);
         }
