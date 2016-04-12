@@ -1,11 +1,11 @@
 {
-    "name": "vain/comparator",
+    "name": "mmjitsu/vain-comparator",
     "type": "shared-package",
     "authors": [
         {
             "name": "Taras Girnyk",
             "email": "le@mirohost.net",
-            "homepage": "https://github.com/allflame/vain-comparator",
+            "homepage": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-comparator",
             "role": "Maintainer"
         }
     ],
@@ -17,14 +17,17 @@
     "require": {
         "php": ">=5.6.0",
         "ext-pdo": "*",
-        "vain/core": "dev-master"
+        "mmjitsu/vain-core": "dev-master"
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/allflame/vain-core"
+            "type": "git",
+            "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-core.git"
         }
     ],
+    "config": {
+        "secure-http": false
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
