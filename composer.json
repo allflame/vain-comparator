@@ -1,5 +1,5 @@
 {
-    "name": "mmjitsu/vain-comparator",
+    "name": "vain/comparator",
     "type": "shared-package",
     "authors": [
         {
@@ -17,7 +17,7 @@
     "require": {
         "php": ">=5.6.0",
         "ext-pdo": "*",
-        "mmjitsu/vain-core": "dev-master"
+        "vain/core": "dev-master"
     },
     "repositories": [
         {
