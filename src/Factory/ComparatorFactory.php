@@ -10,6 +10,7 @@ namespace Vain\Comparator\Factory;
 
 use Vain\Comparator\Basic\BasicComparator;
 use Vain\Comparator\String\StringComparator;
+use Vain\Comparator\Value\ValueComparator;
 
 class ComparatorFactory implements ComparatorFactoryInterface
 {
@@ -22,6 +23,9 @@ class ComparatorFactory implements ComparatorFactoryInterface
             case 'string':
                 return new StringComparator();
                 break;
+            case 'value':
+                return new ValueComparator();
+            break;
             default:
                 return new BasicComparator();
         }

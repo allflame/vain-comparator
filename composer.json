@@ -17,12 +17,17 @@
     "require": {
         "php": ">=5.6.0",
         "ext-pdo": "*",
-        "vain/core": "dev-master"
+        "vain/core": "dev-master",
+        "vain/value": "dev-master"
     },
     "repositories": [
         {
             "type": "git",
             "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-core.git"
+        },
+        {
+            "type": "git",
+            "url": "http://gitlab.cosmonova.net.ua/taras.girnyk/vain-value.git"
         }
     ],
     "config": {

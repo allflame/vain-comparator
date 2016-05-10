@@ -9,6 +9,7 @@
 namespace Vain\Comparator\Value;
 
 use Vain\Comparator\AbstractComparator;
+use Vain\Value\ValueObjectInterface;
 
 class ValueComparator extends AbstractComparator
 {
@@ -20,7 +21,7 @@ class ValueComparator extends AbstractComparator
      */
     public function eq($what, $against)
     {
-        // TODO: Implement eq() method.
+        return ValueObjectInterface::EQUAL === $what->compare($against);
     }
 
     /**
@@ -31,7 +32,7 @@ class ValueComparator extends AbstractComparator
      */
     public function neq($what, $against)
     {
-        // TODO: Implement neq() method.
+        return ValueObjectInterface::EQUAL !== $what->compare($against);
     }
 
     /**
@@ -42,7 +43,7 @@ class ValueComparator extends AbstractComparator
      */
     public function lt($what, $against)
     {
-        // TODO: Implement lt() method.
+        return ValueObjectInterface::LESS === $what->compare($against);
     }
 
     /**
@@ -53,7 +54,7 @@ class ValueComparator extends AbstractComparator
      */
     public function lte($what, $against)
     {
-        // TODO: Implement lte() method.
+        return !$this->gt($what, $against);
     }
 
     /**
@@ -64,7 +65,7 @@ class ValueComparator extends AbstractComparator
      */
     public function gt($what, $against)
     {
-        // TODO: Implement gt() method.
+        return ValueObjectInterface::GREATER === $what->compare($against);
     }
 
     /**
@@ -75,18 +76,24 @@ class ValueComparator extends AbstractComparator
      */
     public function gte($what, $against)
     {
-        // TODO: Implement gte() method.
+        return !$this->lt($what, $against);
     }
 
     /**
      * @param ValueObjectInterface $what
-     * @param ValueObjectInterface $against
+     * @param ValueObjectInterface[] $against
      *
      * @return bool
      */
     public function in($what, $against)
     {
-        // TODO: Implement in() method.
+        foreach ($against as $againstItem) {
+            if ($this->eq($what, $againstItem)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -97,6 +104,6 @@ class ValueComparator extends AbstractComparator
      */
     public function like($what, $against)
     {
-        // TODO: Implement like() method.
+        return false;
     }
 }
