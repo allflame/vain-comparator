@@ -8,13 +8,15 @@
 
 namespace Vain\Comparator;
 
+use Vain\Comparator\Result\ComparableResultInterface;
+
 interface ComparatorInterface
 {
     /**
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function eq($what, $against);
 
@@ -22,7 +24,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function neq($what, $against);
 
@@ -30,7 +32,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function lt($what, $against);
 
@@ -38,7 +40,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function lte($what, $against);
 
@@ -46,7 +48,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function gt($what, $against);
 
@@ -54,7 +56,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function gte($what, $against);
 
@@ -62,7 +64,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function in($what, $against);
 
@@ -70,7 +72,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function like($what, $against);
 
@@ -79,7 +81,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return bool
+     * @return ComparableResultInterface
      */
     public function compare($shortcut, $what, $against);
 }

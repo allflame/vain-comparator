@@ -9,6 +9,7 @@
 namespace Vain\Comparator\Basic;
 
 use Vain\Comparator\AbstractComparator;
+use Vain\Comparator\Result\ComparableResult;
 
 class BasicComparator extends AbstractComparator
 {
@@ -17,7 +18,7 @@ class BasicComparator extends AbstractComparator
      */
     public function eq($what, $against)
     {
-        return $what === $against;
+        return new ComparableResult($what === $against, $what, $against, abs($what - $against));
     }
 
     /**
@@ -25,7 +26,7 @@ class BasicComparator extends AbstractComparator
      */
     public function neq($what, $against)
     {
-        return $what !== $against;
+        return new ComparableResult($what !== $against, $what, $against, abs($what - $against));
     }
 
     /**
@@ -33,7 +34,7 @@ class BasicComparator extends AbstractComparator
      */
     public function lt($what, $against)
     {
-        return $what < $against;
+        return new ComparableResult($what < $against, $what, $against, abs($against - $what));
     }
 
     /**
@@ -41,7 +42,7 @@ class BasicComparator extends AbstractComparator
      */
     public function lte($what, $against)
     {
-        return $what <= $against;
+        return new ComparableResult($what <= $against, $what, $against, abs($against - $what));
     }
 
     /**
@@ -49,7 +50,7 @@ class BasicComparator extends AbstractComparator
      */
     public function gt($what, $against)
     {
-        return $what > $against;
+        return new ComparableResult($what > $against, $what, $against, abs($against - $what));
     }
 
     /**
@@ -57,7 +58,7 @@ class BasicComparator extends AbstractComparator
      */
     public function gte($what, $against)
     {
-        return $what >= $against;
+        return new ComparableResult($what >= $against, $what, $against, abs($against - $what));
     }
 
     /**
@@ -65,7 +66,7 @@ class BasicComparator extends AbstractComparator
      */
     public function in($what, $against)
     {
-        return array_search($what, $against);
+        return new ComparableResult((bool)array_search($what, $against), $what, $against, $against);
     }
 
     /**
@@ -73,6 +74,6 @@ class BasicComparator extends AbstractComparator
      */
     public function like($what, $against)
     {
-        return false;
+        return new ComparableResult(false, $what, $against, $against);
     }
 }
