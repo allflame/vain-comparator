@@ -8,7 +8,6 @@
 
 namespace Vain\Comparator;
 
-
 interface ComparatorInterface
 {
     /**
