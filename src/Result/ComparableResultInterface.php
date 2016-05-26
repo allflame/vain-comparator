@@ -10,6 +10,9 @@ namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\ResultInterface;
 
+/**
+ * @method ComparableResultInterface invert
+ */
 interface ComparableResultInterface extends ResultInterface
 {
     /**
