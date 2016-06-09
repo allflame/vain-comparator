@@ -68,6 +68,4 @@ class ComparableResult extends AbstractResult implements ComparableResultInterfa
 
         return sprintf('Successful. Expected %s actual %s (%s over)', $this->expected, $this->actual, $this->difference);
     }
-
-
 }
