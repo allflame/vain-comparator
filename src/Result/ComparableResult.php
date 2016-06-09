@@ -12,20 +12,20 @@ use Vain\Core\Result\AbstractResult;
 
 class ComparableResult extends AbstractResult implements ComparableResultInterface
 {
-    private $expected;
-
     private $actual;
+
+    private $expected;
 
     private $difference;
 
     /**
      * ComparableResult constructor.
      * @param bool $status
-     * @param mixed $expected
      * @param mixed $actual
+     * @param mixed $expected
      * @param mixed $difference
      */
-    public function __construct($status, $actual = null, $expected = null, $difference = null)
+    public function __construct($status, $actual = 0, $expected = 0, $difference = 0)
     {
         $this->actual = $actual;
         $this->expected = $expected;
