@@ -2,5 +2,5 @@ services:
     comparator.factory:
         class: Vain\Comparator\Factory\ComparatorFactory
     comparator.repository:
-        class:
+        class: Vain\Comparator\Repository\ComparatorRepository
         arguments: ['@comparator.factory']
