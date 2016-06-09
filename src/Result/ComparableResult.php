@@ -56,4 +56,18 @@ class ComparableResult extends AbstractResult implements ComparableResultInterfa
     {
         return $this->difference;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function __toString()
+    {
+        if (false === $this->getStatus()) {
+            return sprintf('Failed. Expected %s actual %s (%s short)', $this->expected, $this->actual, $this->difference);
+        }
+
+        return sprintf('Successful. Expected %s actual %s (%s over)', $this->expected, $this->actual, $this->difference);
+    }
+
+
 }

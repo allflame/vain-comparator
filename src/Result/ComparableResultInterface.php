@@ -9,11 +9,12 @@
 namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\ResultInterface;
+use Vain\Core\String\StringInterface;
 
 /**
  * @method ComparableResultInterface invert
  */
-interface ComparableResultInterface extends ResultInterface
+interface ComparableResultInterface extends ResultInterface, StringInterface
 {
     /**
      * @return mixed
