@@ -14,15 +14,17 @@ class ComparatorRepository implements ComparatorRepositoryInterface
 {
     private $comparatorFactory;
 
-    private $comparators = [];
+    private $comparators;
 
     /**
      * ComparatorRepository constructor.
      * @param ComparatorFactoryInterface $comparatorFactory
+     * @param array $comparators
      */
-    public function __construct(ComparatorFactoryInterface $comparatorFactory)
+    public function __construct(ComparatorFactoryInterface $comparatorFactory, array $comparators = [])
     {
         $this->comparatorFactory = $comparatorFactory;
+        $this->comparators = $comparators;
     }
 
     /**
