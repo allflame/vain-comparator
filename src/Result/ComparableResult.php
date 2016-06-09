@@ -25,10 +25,10 @@ class ComparableResult extends AbstractResult implements ComparableResultInterfa
      * @param mixed $actual
      * @param mixed $difference
      */
-    public function __construct($status, $expected = null, $actual = null, $difference = null)
+    public function __construct($status, $actual = null, $expected = null, $difference = null)
     {
-        $this->expected = $expected;
         $this->actual = $actual;
+        $this->expected = $expected;
         $this->difference = $difference;
         parent::__construct($status);
     }
