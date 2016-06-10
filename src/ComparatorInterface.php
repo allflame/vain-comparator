@@ -8,7 +8,7 @@
 
 namespace Vain\Comparator;
 
-use Vain\Comparator\Result\ComparableResultInterface;
+use Vain\Comparator\Result\ComparatorResultInterface;
 
 interface ComparatorInterface
 {
@@ -16,7 +16,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function eq($what, $against);
 
@@ -24,7 +24,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function neq($what, $against);
 
@@ -32,7 +32,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function lt($what, $against);
 
@@ -40,7 +40,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function lte($what, $against);
 
@@ -48,7 +48,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function gt($what, $against);
 
@@ -56,7 +56,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function gte($what, $against);
 
@@ -64,7 +64,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function in($what, $against);
 
@@ -72,7 +72,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function like($what, $against);
 
@@ -81,7 +81,7 @@ interface ComparatorInterface
      * @param mixed $what
      * @param mixed $against
      *
-     * @return ComparableResultInterface
+     * @return ComparatorResultInterface
      */
     public function compare($shortcut, $what, $against);
 }

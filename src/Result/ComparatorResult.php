@@ -9,8 +9,9 @@
 namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\AbstractResult;
+use Vain\Expression\Visitor\VisitorInterface;
 
-class ComparableResult extends AbstractResult implements ComparableResultInterface
+class ComparatorResult extends AbstractResult implements ComparatorResultInterface
 {
     private $actual;
 
@@ -25,7 +26,7 @@ class ComparableResult extends AbstractResult implements ComparableResultInterfa
      * @param mixed $expected
      * @param mixed $difference
      */
-    public function __construct($status, $actual = 0, $expected = 0, $difference = 0)
+    public function __construct($status = true, $actual = 0, $expected = 0, $difference = 0)
     {
         $this->actual = $actual;
         $this->expected = $expected;
@@ -60,9 +61,38 @@ class ComparableResult extends AbstractResult implements ComparableResultInterfa
     /**
      * @inheritDoc
      */
+    public function accept(VisitorInterface $visitor)
+    {
+        return $visitor->result($this);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function serialize()
+    {
+        return json_encode(['expected' => serialize($this->expected), 'actual' => serialize($this->actual), 'difference' => serialize($this->difference), 'parent' => parent::serialize()]);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function unserialize($serialized)
+    {
+        $serializedData = json_decode($serialized);
+        $this->expected = unserialize($serializedData->expected);
+        $this->actual = unserialize($serializedData->actual);
+        $this->difference = unserialize($serializedData->difference);
+
+        return parent::unserialize($serializedData->parent);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function __toString()
     {
-        if (false === $this->getStatus()) {
+        if (false === $this->isSuccessful()) {
             return sprintf('Failed. Expected %s actual %s (%s short)', $this->expected, $this->actual, $this->difference);
         }
 

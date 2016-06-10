@@ -9,7 +9,7 @@
 namespace Vain\Comparator\String;
 
 use Vain\Comparator\AbstractComparator;
-use Vain\Comparator\Result\ComparableResult;
+use Vain\Comparator\Result\ComparatorResult;
 
 class StringComparator extends AbstractComparator
 {
@@ -18,7 +18,7 @@ class StringComparator extends AbstractComparator
      */
     public function eq($what, $against)
     {
-        return new ComparableResult($what === $against, $what, $against, $against);
+        return new ComparatorResult($what === $against, $what, $against, $against);
     }
 
     /**
@@ -26,7 +26,7 @@ class StringComparator extends AbstractComparator
      */
     public function neq($what, $against)
     {
-        return new ComparableResult($what !== $against, $what, $against, $against);
+        return new ComparatorResult($what !== $against, $what, $against, $against);
     }
 
     /**
@@ -34,7 +34,7 @@ class StringComparator extends AbstractComparator
      */
     public function lt($what, $against)
     {
-        return new ComparableResult(strcmp($what, $against) < 0, $what, $against, $against);
+        return new ComparatorResult(strcmp($what, $against) < 0, $what, $against, $against);
     }
 
     /**
@@ -42,7 +42,7 @@ class StringComparator extends AbstractComparator
      */
     public function lte($what, $against)
     {
-        return new ComparableResult(strcmp($what, $against) <= 0, $what, $against, $against);
+        return new ComparatorResult(strcmp($what, $against) <= 0, $what, $against, $against);
     }
 
     /**
@@ -50,7 +50,7 @@ class StringComparator extends AbstractComparator
      */
     public function gt($what, $against)
     {
-        return new ComparableResult(strcmp($what, $against) > 0, $what, $against, $against);
+        return new ComparatorResult(strcmp($what, $against) > 0, $what, $against, $against);
     }
 
     /**
@@ -58,7 +58,7 @@ class StringComparator extends AbstractComparator
      */
     public function gte($what, $against)
     {
-        return new ComparableResult(strcmp($what, $against) >= 0, $what, $against, $against);
+        return new ComparatorResult(strcmp($what, $against) >= 0, $what, $against, $against);
     }
 
     /**
@@ -66,7 +66,7 @@ class StringComparator extends AbstractComparator
      */
     public function in($what, $against)
     {
-        return new ComparableResult((bool)array_search($what, $against), $what, $against, $against);
+        return new ComparatorResult((bool)array_search($what, $against), $what, $against, $against);
     }
 
     /**
@@ -74,6 +74,6 @@ class StringComparator extends AbstractComparator
      */
     public function like($what, $against)
     {
-        return new ComparableResult((bool)preg_match("/$what/", $against), $what, $against, $against);
+        return new ComparatorResult((bool)preg_match("/$what/", $against), $what, $against, $against);
     }
 }
