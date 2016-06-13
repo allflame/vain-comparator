@@ -26,10 +26,6 @@
         {
             "type": "git",
             "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-value.git"
-        },
-        {
-            "type": "git",
-            "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-expression.git"
         }
     ],
     "config": {
