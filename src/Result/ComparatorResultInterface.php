@@ -8,12 +8,12 @@
 
 namespace Vain\Comparator\Result;
 
-use Vain\Expression\Result\ResultExpressionInterface;
+use Vain\Core\Result\ResultInterface;
 
 /**
  * @method ComparatorResultInterface invert
  */
-interface ComparatorResultInterface extends ResultExpressionInterface
+interface ComparatorResultInterface extends ResultInterface
 {
     /**
      * @return mixed

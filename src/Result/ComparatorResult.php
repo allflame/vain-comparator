@@ -9,7 +9,6 @@
 namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\AbstractResult;
-use Vain\Expression\Visitor\VisitorInterface;
 
 class ComparatorResult extends AbstractResult implements ComparatorResultInterface
 {
@@ -56,14 +55,6 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     public function getDifference()
     {
         return $this->difference;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function accept(VisitorInterface $visitor)
-    {
-        return $visitor->result($this);
     }
 
     /**

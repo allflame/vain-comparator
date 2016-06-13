@@ -16,7 +16,6 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "vain/expression": "dev-dev",
         "vain/value": "dev-dev"
     },
     "repositories": [
