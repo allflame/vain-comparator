@@ -14,6 +14,14 @@ use Vain\Comparator\Result\ComparatorResult;
 class BasicComparator extends AbstractComparator
 {
     /**
+     * BasicComparator constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('basic');
+    }
+
+    /**
      * @inheritDoc
      */
     public function eq($what, $against)

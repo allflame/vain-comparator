@@ -13,6 +13,11 @@ use Vain\Comparator\Result\ComparatorResultInterface;
 interface ComparatorInterface
 {
     /**
+     * @return string
+     */
+    public function getName();
+
+    /**
      * @param mixed $what
      * @param mixed $against
      *

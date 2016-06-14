@@ -13,9 +13,16 @@ use Vain\Comparator\ComparatorInterface;
 interface ComparatorRepositoryInterface
 {
     /**
-     * @param string $type
+     * @param ComparatorInterface $comparator
+     *
+     * @return ComparatorRepositoryInterface
+     */
+    public function addComparator(ComparatorInterface $comparator);
+
+    /**
+     * @param string $name
      *
      * @return ComparatorInterface
      */
-    public function getComparator($type);
+    public function getComparator($name);
 }

@@ -8,10 +8,9 @@
 
 namespace Vain\Comparator\Decorator;
 
-
 use Vain\Comparator\ComparatorInterface;
 
-class AbstractComparatorDecorator implements ComparatorInterface
+abstract class AbstractComparatorDecorator implements ComparatorInterface
 {
     private $comparator;
 
@@ -22,6 +21,14 @@ class AbstractComparatorDecorator implements ComparatorInterface
     public function __construct(ComparatorInterface $comparator)
     {
         $this->comparator = $comparator;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getName()
+    {
+        return $this->comparator->getName();
     }
 
     /**

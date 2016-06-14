@@ -16,6 +16,14 @@ use Vain\Value\ValueObjectInterface;
 class ValueComparator extends AbstractComparator
 {
     /**
+     * ValueComparator constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('value');
+    }
+
+    /**
      * @param ValueObjectInterface $what
      * @param ValueObjectInterface $against
      *

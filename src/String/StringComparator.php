@@ -14,6 +14,14 @@ use Vain\Comparator\Result\ComparatorResult;
 class StringComparator extends AbstractComparator
 {
     /**
+     * StringComparator constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('string');
+    }
+
+    /**
      * @inheritDoc
      */
     public function eq($what, $against)
