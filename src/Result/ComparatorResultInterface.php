@@ -18,15 +18,5 @@ interface ComparatorResultInterface extends ResultInterface
     /**
      * @return mixed
      */
-    public function getExpected();
-
-    /**
-     * @return mixed
-     */
-    public function getActual();
-
-    /**
-     * @return mixed
-     */
     public function getDifference();
 }

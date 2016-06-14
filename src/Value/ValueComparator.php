@@ -23,7 +23,7 @@ class ValueComparator extends AbstractComparator
      */
     public function eq($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::EQUAL === $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::EQUAL === $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -34,7 +34,7 @@ class ValueComparator extends AbstractComparator
      */
     public function neq($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::EQUAL !== $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::EQUAL !== $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -45,7 +45,7 @@ class ValueComparator extends AbstractComparator
      */
     public function lt($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::LESS === $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::LESS === $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -56,7 +56,7 @@ class ValueComparator extends AbstractComparator
      */
     public function lte($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::GREATER !== $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::GREATER !== $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -67,7 +67,7 @@ class ValueComparator extends AbstractComparator
      */
     public function gt($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::GREATER === $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::GREATER === $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -78,7 +78,7 @@ class ValueComparator extends AbstractComparator
      */
     public function gte($what, $against)
     {
-        return new ComparatorResult(ValueObjectInterface::LESS !== $what->compare($against), $what, $against, $what->diff($against));
+        return new ComparatorResult(ValueObjectInterface::LESS !== $what->compare($against), $what->diff($against));
     }
 
     /**
@@ -96,7 +96,7 @@ class ValueComparator extends AbstractComparator
             }
         }
 
-        return new ComparatorResult(false, $what, $against, $against);
+        return new ComparatorResult(false, $against);
     }
 
     /**
@@ -107,6 +107,6 @@ class ValueComparator extends AbstractComparator
      */
     public function like($what, $against)
     {
-        return new ComparatorResult(false, $what, $against, $against);
+        return new ComparatorResult(false, $against);
     }
 }
