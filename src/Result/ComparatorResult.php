@@ -12,17 +12,41 @@ use Vain\Core\Result\AbstractResult;
 
 class ComparatorResult extends AbstractResult implements ComparatorResultInterface
 {
+    private $expected;
+
+    private $actual;
+
     private $difference;
 
     /**
      * ComparableResult constructor.
      * @param bool $status
+     * @param mixed $actual
+     * @param mixed $expected
      * @param mixed $difference
      */
-    public function __construct($status = true, $difference= 0)
+    public function __construct($status, $actual, $expected, $difference = 0)
     {
+        $this->actual = $actual;
+        $this->expected = $expected;
         $this->difference = $difference;
         parent::__construct($status);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExpected()
+    {
+        return $this->expected;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActual()
+    {
+        return $this->actual;
     }
 
     /**
@@ -36,20 +60,9 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     /**
      * @inheritDoc
      */
-    public function serialize()
+    public function interpret(\ArrayAccess $context = null)
     {
-        return json_encode(['difference' => serialize($this->difference), 'parent' => parent::serialize()]);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function unserialize($serialized)
-    {
-        $serializedData = json_decode($serialized);
-        $this->difference = unserialize($serializedData->difference);
-
-        return parent::unserialize($serializedData->parent);
+        return $this;
     }
 
     /**
@@ -58,9 +71,9 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     public function __toString()
     {
         if (false === $this->isSuccessful()) {
-            return sprintf('Failed. %s short', $this->difference);
+            return sprintf('Failed. Expected %s actual %s (%s short)', $this->expected, $this->actual, $this->difference);
         }
 
-        return sprintf('Successful. %s over', $this->difference);
+        return sprintf('Successful. Expected %s actual %s (%s over)', $this->expected, $this->actual, $this->difference);
     }
 }

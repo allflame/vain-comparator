@@ -2,19 +2,26 @@
 /**
  * Created by PhpStorm.
  * User: allflame
- * Date: 5/26/16
- * Time: 11:33 AM
+ * Date: 6/15/16
+ * Time: 11:15 AM
  */
 
 namespace Vain\Comparator\Result;
 
-use Vain\Core\Result\ResultInterface;
+use Vain\Expression\Boolean\Result\BooleanResultInterface;
 
-/**
- * @method ComparatorResultInterface invert
- */
-interface ComparatorResultInterface extends ResultInterface
+interface ComparatorResultInterface extends BooleanResultInterface
 {
+    /**
+     * @return mixed
+     */
+    public function getActual();
+
+    /**
+     * @return mixed
+     */
+    public function getExpected();
+
     /**
      * @return mixed
      */

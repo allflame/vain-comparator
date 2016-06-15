@@ -8,6 +8,7 @@
 
 namespace Vain\Comparator;
 
+
 use Vain\Comparator\Result\ComparatorResultInterface;
 
 interface ComparatorInterface
