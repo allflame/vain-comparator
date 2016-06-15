@@ -3,8 +3,8 @@ services:
         class: Vain\Comparator\Repository\ComparatorRepository
         calls:
           - [addComparator, ['int', '@comparator.basic']]
-          - [addComparator, ['float', '@comparator.int']]
-          - [addComparator, ['double', '@comparator.int']]
+          - [addComparator, ['float', '@comparator.basic']]
+          - [addComparator, ['double', '@comparator.basic']]
           - [addComparator, ['string', '@comparator.string']]
           - [addComparator, ['value', '@comparator.value']]
     comparator.basic:
