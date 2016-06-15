@@ -6,7 +6,7 @@ services:
           - [addComparator, ['float', '@comparator.int']]
           - [addComparator, ['double', '@comparator.int']]
           - [addComparator, ['string', '@comparator.string']]
-          - [addComparator, ['value', @comparator.value']]
+          - [addComparator, ['value', '@comparator.value']]
     comparator.basic:
         class: Vain\Comparator\Basic\BasicComparator
     comparator.string:
