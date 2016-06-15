@@ -9,6 +9,7 @@
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\ComparatorInterface;
+use Vain\Comparator\Exception\DuplicateComparatorException;
 use Vain\Comparator\Exception\UnknownComparatorException;
 
 class ComparatorRepository implements ComparatorRepositoryInterface
@@ -27,9 +28,12 @@ class ComparatorRepository implements ComparatorRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function addComparator(ComparatorInterface $comparator)
+    public function addComparator($name, ComparatorInterface $comparator)
     {
-        $this->comparators[$comparator->getName()] = $comparator;
+        if (array_key_exists($name, $this->comparators)) {
+            throw new DuplicateComparatorException($this, $name, $comparator, $this->comparators[$name]);
+        }
+        $this->comparators[$name] = $comparator;
 
         return $this;
     }
