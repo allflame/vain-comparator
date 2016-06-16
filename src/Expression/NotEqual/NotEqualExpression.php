@@ -4,9 +4,9 @@
  *
  * PHP Version 7
  *
- * @package   vain-expression
+ * @package   vain-comparator
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-expression
+ * @link      https://github.com/allflame/vain-comparator
  */
 namespace Vain\Comparator\Expression\NotEqual;
 
