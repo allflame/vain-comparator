@@ -76,4 +76,12 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
 
         return sprintf('Successful. Expected %s actual %s (%s over)', $this->expected, $this->actual, $this->difference);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['comparator_result', array_merge(parent::toArray(), ['expected' => json_encode($this->expected), 'actual' => json_encode($this->actual), 'difference' => json_encode($this->difference)])];
+    }
 }
