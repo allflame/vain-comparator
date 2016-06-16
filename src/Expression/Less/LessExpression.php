@@ -27,4 +27,12 @@ class LessExpression extends AbstractComparisonExpression
     {
         return sprintf('%s < %s', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['less', parent::toArray()];
+    }
 }

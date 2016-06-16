@@ -27,4 +27,12 @@ class InExpression extends AbstractComparisonExpression
     {
         return sprintf('%s in [%s]', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['in', parent::toArray()];
+    }
 }

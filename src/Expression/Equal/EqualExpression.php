@@ -27,4 +27,12 @@ class EqualExpression extends AbstractComparisonExpression
     {
         return sprintf('%s = %s', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['eq', parent::toArray()];
+    }
 }

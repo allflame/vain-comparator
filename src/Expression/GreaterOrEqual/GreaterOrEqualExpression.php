@@ -27,4 +27,12 @@ class GreaterOrEqualExpression extends AbstractComparisonExpression
     {
         return sprintf('%s >= %s', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['gte', parent::toArray()];
+    }
 }

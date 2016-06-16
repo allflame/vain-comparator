@@ -27,4 +27,12 @@ class LikeExpression extends AbstractComparisonExpression
     {
         return sprintf('%s like %s', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['like', parent::toArray()];
+    }
 }

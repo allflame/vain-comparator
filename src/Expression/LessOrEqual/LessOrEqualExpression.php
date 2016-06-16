@@ -27,4 +27,12 @@ class LessOrEqualExpression extends AbstractComparisonExpression
     {
         return sprintf('%s <= %s', $this->getWhat(), $this->getAgainst());
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['lte', parent::toArray()];
+    }
 }

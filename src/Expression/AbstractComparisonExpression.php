@@ -55,4 +55,12 @@ abstract class AbstractComparisonExpression implements ComparisonExpressionInter
     {
         return $this->comparator;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray()
+    {
+        return ['what' => $this->what->toArray(), 'against' => $this->against->toArray(), 'comparator' => $this->comparator->getName()];
+    }
 }
