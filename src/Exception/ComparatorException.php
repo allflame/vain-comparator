@@ -1,26 +1,34 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 12:04 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\ComparatorInterface;
 use Vain\Core\Exception\CoreException;
 
+/**
+ * Class ComparatorException
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class ComparatorException extends CoreException
 {
     private $comparator;
 
     /**
      * VainComparatorException constructor.
+     *
      * @param ComparatorInterface $comparator
-     * @param string $message
-     * @param int $code
-     * @param \Exception $previous
+     * @param string              $message
+     * @param int                 $code
+     * @param \Exception          $previous
      */
     public function __construct(ComparatorInterface $comparator, $message, $code, \Exception $previous = null)
     {

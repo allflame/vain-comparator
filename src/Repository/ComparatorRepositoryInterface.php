@@ -1,19 +1,26 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 12:13 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\ComparatorInterface;
 
+/**
+ * Interface ComparatorRepositoryInterface
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 interface ComparatorRepositoryInterface
 {
     /**
-     * @param string $name
+     * @param string              $name
      * @param ComparatorInterface $comparator
      *
      * @return ComparatorRepositoryInterface

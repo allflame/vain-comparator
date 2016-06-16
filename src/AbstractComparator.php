@@ -1,22 +1,29 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 12:02 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator;
-
 
 use Vain\Comparator\Exception\UnknownShortcutComparatorException;
 
+/**
+ * Class AbstractComparator
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 abstract class AbstractComparator implements ComparatorInterface
 {
     private $name;
 
     /**
      * AbstractComparator constructor.
+     *
      * @param string $name
      */
     public function __construct($name)

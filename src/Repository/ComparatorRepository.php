@@ -1,23 +1,31 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 8:14 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\ComparatorInterface;
 use Vain\Comparator\Exception\DuplicateComparatorException;
 use Vain\Comparator\Exception\UnknownComparatorException;
 
+/**
+ * Class ComparatorRepository
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class ComparatorRepository implements ComparatorRepositoryInterface
 {
     private $comparators;
 
     /**
-     * ComparatorRepository constructor.     
+     * ComparatorRepository constructor.
+     *
      * @param array $comparators
      */
     public function __construct(array $comparators = [])

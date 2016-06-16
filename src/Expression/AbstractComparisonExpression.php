@@ -1,16 +1,23 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 6/14/16
- * Time: 6:07 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Expression;
 
 use Vain\Comparator\ComparatorInterface;
 use Vain\Expression\ExpressionInterface;
 
+/**
+ * Class AbstractComparisonExpression
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 abstract class AbstractComparisonExpression implements ComparisonExpressionInterface
 {
     private $what;
@@ -21,12 +28,16 @@ abstract class AbstractComparisonExpression implements ComparisonExpressionInter
 
     /**
      * AbstractComparisonExpression constructor.
+     *
      * @param ExpressionInterface $what
      * @param ExpressionInterface $against
      * @param ComparatorInterface $comparator
      */
-    public function __construct(ExpressionInterface $what, ExpressionInterface $against, ComparatorInterface $comparator)
-    {
+    public function __construct(
+        ExpressionInterface $what,
+        ExpressionInterface $against,
+        ComparatorInterface $comparator
+    ) {
         $this->what = $what;
         $this->against = $against;
         $this->comparator = $comparator;
@@ -61,6 +72,10 @@ abstract class AbstractComparisonExpression implements ComparisonExpressionInter
      */
     public function toArray()
     {
-        return ['what' => $this->what->toArray(), 'against' => $this->against->toArray(), 'comparator' => $this->comparator->getName()];
+        return [
+            'what' => $this->what->toArray(),
+            'against' => $this->against->toArray(),
+            'comparator' => $this->comparator->getName()
+        ];
     }
 }

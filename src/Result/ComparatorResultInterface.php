@@ -1,15 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 6/15/16
- * Time: 11:15 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Result;
 
 use Vain\Expression\Boolean\Result\BooleanResultInterface;
 
+/**
+ * Interface ComparatorResultInterface
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 interface ComparatorResultInterface extends BooleanResultInterface
 {
     /**

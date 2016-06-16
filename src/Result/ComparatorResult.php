@@ -1,15 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 5/26/16
- * Time: 11:36 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\AbstractResult;
 
+/**
+ * Class ComparatorResult
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class ComparatorResult extends AbstractResult implements ComparatorResultInterface
 {
     private $expected;
@@ -20,6 +27,7 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
 
     /**
      * ComparableResult constructor.
+     *
      * @param bool $status
      * @param mixed $actual
      * @param mixed $expected
@@ -71,10 +79,20 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     public function __toString()
     {
         if (false === $this->isSuccessful()) {
-            return sprintf('Failed. Expected %s actual %s (%s short)', $this->expected, $this->actual, $this->difference);
+            return sprintf(
+                'Failed. Expected %s actual %s (%s short)',
+                $this->expected,
+                $this->actual,
+                $this->difference
+            );
         }
 
-        return sprintf('Successful. Expected %s actual %s (%s over)', $this->expected, $this->actual, $this->difference);
+        return sprintf(
+            'Successful. Expected %s actual %s (%s over)',
+            $this->expected,
+            $this->actual,
+            $this->difference
+        );
     }
 
     /**
@@ -82,6 +100,15 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
      */
     public function toArray()
     {
-        return ['comparator_result' => array_merge(parent::toArray(), ['expected' => json_encode($this->expected), 'actual' => json_encode($this->actual), 'difference' => json_encode($this->difference)])];
+        return [
+            'comparator_result' => array_merge(
+                parent::toArray(),
+                [
+                    'expected' => json_encode($this->expected),
+                    'actual' => json_encode($this->actual),
+                    'difference' => json_encode($this->difference)
+                ]
+            )
+        ];
     }
 }

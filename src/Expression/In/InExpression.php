@@ -1,15 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/1/16
- * Time: 9:43 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Expression\In;
 
 use Vain\Comparator\Expression\AbstractComparisonExpression;
 
+/**
+ * Class InExpression
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class InExpression extends AbstractComparisonExpression
 {
     /**
@@ -17,7 +24,10 @@ class InExpression extends AbstractComparisonExpression
      */
     public function interpret(\ArrayAccess $context = null)
     {
-        return $this->getComparator()->in($this->getWhat()->interpret($context), $this->getAgainst()->interpret($context));
+        return $this->getComparator()->in(
+            $this->getWhat()->interpret($context),
+            $this->getAgainst()->interpret($context)
+        );
     }
 
     /**

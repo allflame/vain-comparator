@@ -1,21 +1,29 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 12:19 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Decorator;
 
 use Vain\Comparator\ComparatorInterface;
 
+/**
+ * Class AbstractComparatorDecorator
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 abstract class AbstractComparatorDecorator implements ComparatorInterface
 {
     private $comparator;
 
     /**
      * AbstractComparatorDecorator constructor.
+     *
      * @param ComparatorInterface $comparator
      */
     public function __construct(ComparatorInterface $comparator)

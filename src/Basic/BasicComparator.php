@@ -1,16 +1,23 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 12:02 PM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Basic;
 
 use Vain\Comparator\AbstractComparator;
 use Vain\Comparator\Result\ComparatorResult;
 
+/**
+ * Class BasicComparator
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class BasicComparator extends AbstractComparator
 {
     /**

@@ -1,15 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/1/16
- * Time: 9:44 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Expression\NotEqual;
 
 use Vain\Comparator\Expression\AbstractComparisonExpression;
 
+/**
+ * Class NotEqualExpression
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class NotEqualExpression extends AbstractComparisonExpression
 {
     /**
@@ -17,7 +24,10 @@ class NotEqualExpression extends AbstractComparisonExpression
      */
     public function interpret(\ArrayAccess $context = null)
     {
-        return $this->getComparator()->neq($this->getWhat()->interpret($context), $this->getAgainst()->interpret($context));
+        return $this->getComparator()->neq(
+            $this->getWhat()->interpret($context),
+            $this->getAgainst()->interpret($context)
+        );
     }
 
     /**

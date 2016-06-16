@@ -1,16 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/4/16
- * Time: 11:59 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator;
-
 
 use Vain\Comparator\Result\ComparatorResultInterface;
 
+/**
+ * Interface ComparatorInterface
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 interface ComparatorInterface
 {
     /**
@@ -84,8 +90,8 @@ interface ComparatorInterface
 
     /**
      * @param string $shortcut
-     * @param mixed $what
-     * @param mixed $against
+     * @param mixed  $what
+     * @param mixed  $against
      *
      * @return ComparatorResultInterface
      */

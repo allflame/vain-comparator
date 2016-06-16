@@ -1,15 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: allflame
- * Date: 4/1/16
- * Time: 9:32 AM
+ * Vain Framework
+ *
+ * PHP Version 7
+ *
+ * @package   vain-expression
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @link      https://github.com/allflame/vain-expression
  */
-
 namespace Vain\Comparator\Expression\Equal;
 
 use Vain\Comparator\Expression\AbstractComparisonExpression;
 
+/**
+ * Class EqualExpression
+ *
+ * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ */
 class EqualExpression extends AbstractComparisonExpression
 {
     /**
@@ -17,7 +24,10 @@ class EqualExpression extends AbstractComparisonExpression
      */
     public function interpret(\ArrayAccess $context = null)
     {
-        return $this->getComparator()->eq($this->getWhat()->interpret($context), $this->getAgainst()->interpret($context));
+        return $this->getComparator()->eq(
+            $this->getWhat()->interpret($context),
+            $this->getAgainst()->interpret($context)
+        );
     }
 
     /**
