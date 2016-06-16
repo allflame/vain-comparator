@@ -33,6 +33,6 @@ class EqualExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['eq', parent::toArray()];
+        return ['eq' => parent::toArray()];
     }
 }

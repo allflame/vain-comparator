@@ -33,6 +33,6 @@ class LikeExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['like', parent::toArray()];
+        return ['like' => parent::toArray()];
     }
 }

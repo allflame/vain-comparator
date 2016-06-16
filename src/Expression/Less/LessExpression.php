@@ -33,6 +33,6 @@ class LessExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['less', parent::toArray()];
+        return ['less' => parent::toArray()];
     }
 }

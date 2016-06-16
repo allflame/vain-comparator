@@ -33,6 +33,6 @@ class NotEqualExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['neq', parent::toArray()];
+        return ['neq' => parent::toArray()];
     }
 }

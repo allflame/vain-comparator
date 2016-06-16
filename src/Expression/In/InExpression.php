@@ -33,6 +33,6 @@ class InExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['in', parent::toArray()];
+        return ['in' => parent::toArray()];
     }
 }

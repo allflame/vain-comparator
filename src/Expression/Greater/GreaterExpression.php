@@ -33,6 +33,6 @@ class GreaterExpression extends AbstractComparisonExpression
      */
     public function toArray()
     {
-        return ['gt', parent::toArray()];
+        return ['gt' => parent::toArray()];
     }
 }
