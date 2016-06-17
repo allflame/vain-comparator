@@ -11,6 +11,7 @@
 namespace Vain\Comparator\Expression;
 
 use Vain\Comparator\ComparatorInterface;
+use Vain\Expression\Binary\AbstractBinaryExpression;
 use Vain\Expression\ExpressionInterface;
 
 /**
@@ -18,7 +19,7 @@ use Vain\Expression\ExpressionInterface;
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-abstract class AbstractComparisonExpression implements ComparisonExpressionInterface
+abstract class AbstractComparisonExpression extends AbstractBinaryExpression implements ComparisonExpressionInterface
 {
     private $what;
 
@@ -38,9 +39,8 @@ abstract class AbstractComparisonExpression implements ComparisonExpressionInter
         ExpressionInterface $against,
         ComparatorInterface $comparator
     ) {
-        $this->what = $what;
-        $this->against = $against;
         $this->comparator = $comparator;
+        parent::__construct($what, $against);
     }
 
     /**
@@ -72,10 +72,6 @@ abstract class AbstractComparisonExpression implements ComparisonExpressionInter
      */
     public function toArray()
     {
-        return [
-            'what' => $this->what->toArray(),
-            'against' => $this->against->toArray(),
-            'comparator' => $this->comparator->getName()
-        ];
+        return array_merge(parent::toArray(), ['comparator' => $this->comparator->getName()]);
     }
 }
