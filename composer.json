@@ -17,7 +17,8 @@
     "require": {
         "php": ">=5.6.0",
         "vain/expression": "dev-dev",
-        "vain/value": "dev-dev"
+        "vain/value": "dev-dev",
+        "vain/time": "dev-dev"
     },
     "repositories": [
         {
@@ -27,6 +28,10 @@
         {
             "type": "git",
             "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-expression.git"
+        },
+        {
+            "type": "git",
+            "url": "http://gitlab.cosmonova.net.ua/mmjitsu/vain-time.git"
         },
         {
             "type": "git",
