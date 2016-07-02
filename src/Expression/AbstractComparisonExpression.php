@@ -21,10 +21,6 @@ use Vain\Expression\ExpressionInterface;
  */
 abstract class AbstractComparisonExpression extends AbstractBinaryExpression implements ComparisonExpressionInterface
 {
-    private $what;
-
-    private $against;
-
     private $comparator;
 
     /**
@@ -48,7 +44,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
      */
     public function getWhat()
     {
-        return $this->what;
+        return $this->getFirstExpression();
     }
 
     /**
@@ -56,7 +52,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
      */
     public function getAgainst()
     {
-        return $this->against;
+        return $this->getSecondExpression();
     }
 
     /**
