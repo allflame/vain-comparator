@@ -22,6 +22,14 @@ use Vain\Time\TimeInterface;
 class TimeComparator extends AbstractComparator
 {
     /**
+     * ValueComparator constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('time');
+    }
+    
+    /**
      * @param TimeInterface $what
      * @param TimeInterface $against
      *
