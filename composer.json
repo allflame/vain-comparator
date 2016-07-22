@@ -16,9 +16,9 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "vain/expression": dev-master,
-        "vain/value": dev-master,
-        "vain/time": dev-master
+        "vain/expression": "dev-master",
+        "vain/value": "dev-master",
+        "vain/time": "dev-master"
     },
     "repositories": [
         {
