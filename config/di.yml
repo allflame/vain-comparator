@@ -4,20 +4,20 @@ imports:
   - { resource: 'vendor/vain/time/config/di.yml' }
 
 services:
-    comparator.repository:
-        class: Vain\Comparator\Repository\ComparatorRepository
-        calls:
-          - [addComparator, ['int', '@comparator.basic']]
-          - [addComparator, ['float', '@comparator.basic']]
-          - [addComparator, ['double', '@comparator.basic']]
-          - [addComparator, ['string', '@comparator.string']]
-          - [addComparator, ['time', '@comparator.time']]
-          - [addComparator, ['value', '@comparator.value']]
-    comparator.basic:
-        class: Vain\Comparator\Basic\BasicComparator
-    comparator.string:
-        class: Vain\Comparator\String\StringComparator
-    comparator.time:
-        class: Vain\Comparator\Time\TimeComparator
-    comparator.value:
-        class: Vain\Comparator\Value\ValueComparator
+  comparator.repository:
+    class: Vain\Comparator\Repository\ComparatorRepository
+    calls:
+      - [addComparator, ['int', '@comparator.basic']]
+      - [addComparator, ['float', '@comparator.basic']]
+      - [addComparator, ['double', '@comparator.basic']]
+      - [addComparator, ['string', '@comparator.string']]
+      - [addComparator, ['time', '@comparator.time']]
+      - [addComparator, ['value', '@comparator.value']]
+  comparator.basic:
+    class: Vain\Comparator\Basic\BasicComparator
+  comparator.string:
+    class: Vain\Comparator\String\StringComparator
+  comparator.time:
+    class: Vain\Comparator\Time\TimeComparator
+  comparator.value:
+    class: Vain\Comparator\Value\ValueComparator
