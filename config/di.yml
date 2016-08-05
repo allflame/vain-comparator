@@ -1,7 +1,7 @@
 imports:
-  - { resource: 'vendor/vain/expression/config/di.yml' }
-  - { resource: 'vendor/vain/value/config/di.yml' }
-  - { resource: 'vendor/vain/time/config/di.yml' }
+#  - { resource: 'vendor/vain/expression/config/di.yml' }
+#  - { resource: 'vendor/vain/value/config/di.yml' }
+#  - { resource: 'vendor/vain/time/config/di.yml' }
 
 services:
   comparator.repository:
