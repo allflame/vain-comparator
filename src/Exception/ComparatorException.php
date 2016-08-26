@@ -11,14 +11,14 @@
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\ComparatorInterface;
-use Vain\Core\Exception\CoreException;
+use Vain\Core\Exception\AbstractCoreException;
 
 /**
  * Class ComparatorException
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class ComparatorException extends CoreException
+class ComparatorException extends AbstractCoreException
 {
     private $comparator;
 
