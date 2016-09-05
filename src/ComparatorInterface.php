@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator;
 
 use Vain\Comparator\Result\ComparatorResultInterface;
@@ -22,7 +24,7 @@ interface ComparatorInterface
     /**
      * @return string
      */
-    public function getName();
+    public function getName() : string;
 
     /**
      * @param mixed $what
@@ -30,7 +32,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function eq($what, $against);
+    public function eq($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -38,7 +40,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function neq($what, $against);
+    public function neq($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -46,7 +48,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function lt($what, $against);
+    public function lt($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -54,7 +56,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function lte($what, $against);
+    public function lte($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -62,7 +64,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function gt($what, $against);
+    public function gt($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -70,7 +72,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function gte($what, $against);
+    public function gte($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -78,7 +80,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function in($what, $against);
+    public function in($what, $against) : ComparatorResultInterface;
 
     /**
      * @param mixed $what
@@ -86,7 +88,7 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function like($what, $against);
+    public function like($what, $against) : ComparatorResultInterface;
 
     /**
      * @param string $shortcut
@@ -95,5 +97,5 @@ interface ComparatorInterface
      *
      * @return ComparatorResultInterface
      */
-    public function compare($shortcut, $what, $against);
+    public function compare(string $shortcut, $what, $against) : ComparatorResultInterface;
 }

@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\ComparatorInterface;
@@ -34,7 +36,7 @@ class DuplicateComparatorException extends ComparatorRepositoryException
      */
     public function __construct(
         ComparatorRepositoryInterface $comparatorRepository,
-        $name,
+        string $name,
         ComparatorInterface $new,
         ComparatorInterface $old
     ) {
@@ -56,7 +58,7 @@ class DuplicateComparatorException extends ComparatorRepositoryException
     /**
      * @return ComparatorInterface
      */
-    public function getNew()
+    public function getNew() : ComparatorInterface
     {
         return $this->new;
     }
@@ -64,7 +66,7 @@ class DuplicateComparatorException extends ComparatorRepositoryException
     /**
      * @return ComparatorInterface
      */
-    public function getOld()
+    public function getOld() : ComparatorInterface
     {
         return $this->old;
     }

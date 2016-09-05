@@ -8,9 +8,12 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Expression\Like;
 
 use Vain\Comparator\Expression\AbstractComparisonExpression;
+use Vain\Comparator\Result\ComparatorResultInterface;
 
 /**
  * Class LikeExpression
@@ -22,7 +25,7 @@ class LikeExpression extends AbstractComparisonExpression
     /**
      * @inheritDoc
      */
-    public function interpret(\ArrayAccess $context = null)
+    public function interpret(\ArrayAccess $context = null) : ComparatorResultInterface
     {
         return $this->getComparator()->like(
             $this->getWhat()->interpret($context),
@@ -33,7 +36,7 @@ class LikeExpression extends AbstractComparisonExpression
     /**
      * @inheritDoc
      */
-    public function __toString()
+    public function __toString() : string
     {
         return sprintf('%s like %s', $this->getWhat(), $this->getAgainst());
     }
@@ -41,7 +44,7 @@ class LikeExpression extends AbstractComparisonExpression
     /**
      * @inheritDoc
      */
-    public function toArray()
+    public function toArray() : array
     {
         return ['like' => parent::toArray()];
     }

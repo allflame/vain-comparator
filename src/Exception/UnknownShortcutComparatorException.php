@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\ComparatorInterface;
@@ -25,7 +27,7 @@ class UnknownShortcutComparatorException extends ComparatorException
      * @param ComparatorInterface $comparator
      * @param string              $shortcut
      */
-    public function __construct(ComparatorInterface $comparator, $shortcut)
+    public function __construct(ComparatorInterface $comparator, string $shortcut)
     {
         parent::__construct(
             $comparator,

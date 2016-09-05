@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Exception;
 
 use Vain\Comparator\Repository\ComparatorRepositoryInterface;
@@ -32,8 +34,8 @@ class ComparatorRepositoryException extends AbstractCoreException
      */
     public function __construct(
         ComparatorRepositoryInterface $comparatorRepository,
-        $message,
-        $code,
+        string $message,
+        int $code,
         \Exception $previous = null
     ) {
         $this->comparatorRepository = $comparatorRepository;
@@ -43,7 +45,7 @@ class ComparatorRepositoryException extends AbstractCoreException
     /**
      * @return ComparatorRepositoryInterface
      */
-    public function getComparatorRepository()
+    public function getComparatorRepository() : ComparatorRepositoryInterface
     {
         return $this->comparatorRepository;
     }
