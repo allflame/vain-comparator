@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Expression;
 
 use Vain\Comparator\ComparatorInterface;
@@ -42,7 +44,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
     /**
      * @return ExpressionInterface
      */
-    public function getWhat()
+    public function getWhat() : ExpressionInterface
     {
         return $this->getFirstExpression();
     }
@@ -50,7 +52,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
     /**
      * @return ExpressionInterface
      */
-    public function getAgainst()
+    public function getAgainst() : ExpressionInterface
     {
         return $this->getSecondExpression();
     }
@@ -58,7 +60,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
     /**
      * @return ComparatorInterface
      */
-    public function getComparator()
+    public function getComparator() : ComparatorInterface
     {
         return $this->comparator;
     }
@@ -66,7 +68,7 @@ abstract class AbstractComparisonExpression extends AbstractBinaryExpression imp
     /**
      * @inheritDoc
      */
-    public function toArray()
+    public function toArray() : array
     {
         return array_merge(parent::toArray(), ['comparator' => $this->comparator->getName()]);
     }

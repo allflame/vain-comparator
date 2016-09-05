@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types = 1);
+
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\ComparatorInterface;
@@ -25,12 +27,12 @@ interface ComparatorRepositoryInterface
      *
      * @return ComparatorRepositoryInterface
      */
-    public function addComparator($name, ComparatorInterface $comparator);
+    public function addComparator(string $name, ComparatorInterface $comparator) : ComparatorRepositoryInterface;
 
     /**
      * @param string $name
      *
      * @return ComparatorInterface
      */
-    public function getComparator($name);
+    public function getComparator(string $name) : ComparatorInterface;
 }

@@ -8,9 +8,12 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Decorator;
 
 use Vain\Comparator\ComparatorInterface;
+use Vain\Comparator\Result\ComparatorResultInterface;
 
 /**
  * Class AbstractComparatorDecorator
@@ -34,7 +37,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->comparator->getName();
     }
@@ -42,7 +45,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function eq($what, $against)
+    public function eq($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->eq($what, $against);
     }
@@ -50,7 +53,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function neq($what, $against)
+    public function neq($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->neq($what, $against);
     }
@@ -58,7 +61,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function lt($what, $against)
+    public function lt($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->lt($what, $against);
     }
@@ -66,7 +69,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function lte($what, $against)
+    public function lte($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->lte($what, $against);
     }
@@ -74,7 +77,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function gt($what, $against)
+    public function gt($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->gt($what, $against);
     }
@@ -82,7 +85,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function gte($what, $against)
+    public function gte($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->gte($what, $against);
     }
@@ -90,7 +93,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function in($what, $against)
+    public function in($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->in($what, $against);
     }
@@ -98,7 +101,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function like($what, $against)
+    public function like($what, $against) : ComparatorResultInterface
     {
         return $this->comparator->like($what, $against);
     }
@@ -106,7 +109,7 @@ abstract class AbstractComparatorDecorator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function compare($shortcut, $what, $against)
+    public function compare(string $shortcut, $what, $against) : ComparatorResultInterface
     {
         return $this->comparator->compare($shortcut, $what, $against);
     }

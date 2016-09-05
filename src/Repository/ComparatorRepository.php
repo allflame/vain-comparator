@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator\Repository;
 
 use Vain\Comparator\ComparatorInterface;
@@ -36,7 +38,7 @@ class ComparatorRepository implements ComparatorRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function addComparator($name, ComparatorInterface $comparator)
+    public function addComparator(string $name, ComparatorInterface $comparator) : ComparatorRepositoryInterface
     {
         if (array_key_exists($name, $this->comparators)) {
             throw new DuplicateComparatorException($this, $name, $comparator, $this->comparators[$name]);
@@ -49,7 +51,7 @@ class ComparatorRepository implements ComparatorRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function getComparator($name)
+    public function getComparator(string $name) : ComparatorInterface
     {
         if (false === array_key_exists($name, $this->comparators)) {
             throw new UnknownComparatorException($this, $name);

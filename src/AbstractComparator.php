@@ -8,9 +8,12 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types=1);
+
 namespace Vain\Comparator;
 
 use Vain\Comparator\Exception\UnknownShortcutComparatorException;
+use Vain\Comparator\Result\ComparatorResultInterface;
 
 /**
  * Class AbstractComparator
@@ -26,7 +29,7 @@ abstract class AbstractComparator implements ComparatorInterface
      *
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
@@ -34,7 +37,7 @@ abstract class AbstractComparator implements ComparatorInterface
     /**
      * @return string
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
@@ -42,7 +45,7 @@ abstract class AbstractComparator implements ComparatorInterface
     /**
      * @inheritDoc
      */
-    public function compare($shortcut, $what, $against)
+    public function compare(string $shortcut, $what, $against) : ComparatorResultInterface
     {
         switch ($shortcut) {
             case 'eq':

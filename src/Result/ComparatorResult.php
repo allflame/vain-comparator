@@ -8,6 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-comparator
  */
+declare(strict_types = 1);
+
 namespace Vain\Comparator\Result;
 
 use Vain\Core\Result\AbstractResult;
@@ -28,12 +30,12 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     /**
      * ComparableResult constructor.
      *
-     * @param bool $status
+     * @param bool  $status
      * @param mixed $actual
      * @param mixed $expected
      * @param mixed $difference
      */
-    public function __construct($status, $actual, $expected, $difference = 0)
+    public function __construct(bool $status, $actual, $expected, $difference = 0)
     {
         $this->actual = $actual;
         $this->expected = $expected;
@@ -76,7 +78,7 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     /**
      * @inheritDoc
      */
-    public function __toString()
+    public function __toString() : string
     {
         if (false === $this->isSuccessful()) {
             return sprintf(
@@ -98,7 +100,7 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
     /**
      * @inheritDoc
      */
-    public function toArray()
+    public function toArray() : array
     {
         return [
             'comparator_result' => array_merge(
