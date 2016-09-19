@@ -99,7 +99,7 @@ class TimeComparator extends AbstractComparator
     }
 
     /**
-     * @param TimeInterface   $what
+     * @param TimeInterface $what
      * @param TimeInterface[] $against
      *
      * @return ComparatorResultInterface
@@ -108,7 +108,12 @@ class TimeComparator extends AbstractComparator
     {
         list ($start, $end) = $against;
 
-        return new ComparatorResult($what->between($start, $end), $what, $start, min($what->diff($start, true), $what->diff($end, true)));
+        return new ComparatorResult(
+            $what->between($start, $end),
+            $what,
+            $start,
+            min($what->diff($start, true), $what->diff($end, true))
+        );
     }
 
     /**

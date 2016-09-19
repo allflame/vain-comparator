@@ -106,11 +106,11 @@ class ComparatorResult extends AbstractResult implements ComparatorResultInterfa
             'comparator_result' => array_merge(
                 parent::toArray(),
                 [
-                    'expected' => json_encode($this->expected),
-                    'actual' => json_encode($this->actual),
-                    'difference' => json_encode($this->difference)
+                    'expected'   => json_encode($this->expected),
+                    'actual'     => json_encode($this->actual),
+                    'difference' => json_encode($this->difference),
                 ]
-            )
+            ),
         ];
     }
 }
