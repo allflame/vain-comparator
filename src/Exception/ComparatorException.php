@@ -35,7 +35,7 @@ class ComparatorException extends AbstractCoreException
     public function __construct(
         ComparatorInterface $comparator,
         string $message,
-        int $code,
+        int $code = 500,
         \Exception $previous = null
     ) {
         $this->comparator = $comparator;

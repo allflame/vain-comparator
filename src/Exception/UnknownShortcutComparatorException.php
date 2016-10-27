@@ -29,11 +29,6 @@ class UnknownShortcutComparatorException extends ComparatorException
      */
     public function __construct(ComparatorInterface $comparator, string $shortcut)
     {
-        parent::__construct(
-            $comparator,
-            sprintf('Cannot compare variables by unknown shortcut %s', $shortcut),
-            0,
-            null
-        );
+        parent::__construct($comparator, sprintf('Cannot compare variables by unknown shortcut %s', $shortcut));
     }
 }

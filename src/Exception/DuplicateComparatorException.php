@@ -49,9 +49,7 @@ class DuplicateComparatorException extends ComparatorRepositoryException
                 get_class($new),
                 $name,
                 get_class($old)
-            ),
-            0,
-            null
+            )
         );
     }
 

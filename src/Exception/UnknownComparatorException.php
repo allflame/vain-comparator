@@ -29,6 +29,6 @@ class UnknownComparatorException extends ComparatorRepositoryException
      */
     public function __construct(ComparatorRepositoryInterface $comparatorRepository, string $name)
     {
-        parent::__construct($comparatorRepository, sprintf('Comparator %s is not registered', $name), 0);
+        parent::__construct($comparatorRepository, sprintf('Comparator %s is not registered', $name));
     }
 }
