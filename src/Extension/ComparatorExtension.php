@@ -12,6 +12,8 @@ declare(strict_types = 1);
 
 namespace Vain\Comparator\Extension;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Vain\Comparator\Extension\Compiler\ComparatorCompilerPass;
 use Vain\Core\Extension\AbstractExtension;
 
 /**
@@ -21,4 +23,13 @@ use Vain\Core\Extension\AbstractExtension;
  */
 class ComparatorExtension extends AbstractExtension
 {
+    /**
+     * @inheritDoc
+     */
+    public function load(array $configs, ContainerBuilder $container) : AbstractExtension
+    {
+        $container->addCompilerPass(new ComparatorCompilerPass());
+
+        return parent::load($configs, $container);
+    }
 }
