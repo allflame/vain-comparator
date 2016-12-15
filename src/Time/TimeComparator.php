@@ -15,7 +15,7 @@ namespace Vain\Comparator\Time;
 use Vain\Comparator\AbstractComparator;
 use Vain\Comparator\Result\ComparatorResult;
 use Vain\Comparator\Result\ComparatorResultInterface;
-use Vain\Time\TimeInterface;
+use Vain\Core\Time\TimeInterface;
 
 /**
  * Class TimeComparator
